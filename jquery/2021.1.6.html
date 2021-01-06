@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
-        var fruit =new Array(4);
-        fruit[0]="ddd";
-        fruit[1]="aaa";
-        fruit[2]="bbb";
-        fruit[3]="dhhhhhhhhhhhhhdd";
-        fruit.sort();//排序
-        fruit.push("yellow");//追加
-        alert(fruit)
-        var a = prompt("请输入一个数字","1998");
-        document.write("a"+a)
+        //var fruit =new Array(4);
+       var test= new Array("America","Greece","Britain","Canda","China","Egypt");
+       var i=0;
+       document.write("在以下字符中"+"<br/>")
+        test.forEach(function (item) {
+            document.write(item+"<br/>")
+            if (item.indexOf("a")&&item.indexOf("A")){
+                i++;
+
+            }
+        })
+        document.write("共有"+i+"个字符中包含a或A")
     </script>
 </head>
 <body>
 
-dddddd
+
 </body>
 </html>
