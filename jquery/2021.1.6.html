@@ -10,20 +10,33 @@
        document.write("在以下字符中"+"<br/>")
         test.forEach(function (item) {
             document.write(item+"<br/>")
-            if (item.indexOf("a")&&item.indexOf("A")){
+            if (item.indexOf("a")!=-1||item.indexOf("A")!=-1){
                 f++;
 
             }
         })
-        document.write("共有"+f+"个字符中包含a或A")
+        document.write("共有"+f+"个字符中包含a或A"+"<br/>")
+
+        document.write("在以下字符中"+"<br/>")
+        var count=0;
+        for ( i in test){
+
+            document.write(test[i]+"<br/>")
+            if (test[i].indexOf("a")!=-1||test[i].indexOf("A")!=-1){
+                count++;
+            }
+
+        }
+        document.write("共有"+count+"个字符中包含a或A"+"<br/>")
 
 
-
-
+        function f1() {
+            alert("ok")
+        }
     </script>
 </head>
 <body>
-
+<p onclick="f1()">hhhhh</p>
 
 </body>
 </html>
