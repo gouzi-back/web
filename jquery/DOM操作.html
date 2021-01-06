@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        /* $(document).ready(function () {
+            $("#show").click(function () {
+                alert("文本："+$("#test").text());
+            });
+            $("#show2").click(function () {
+                alert("html是："+$("#test").html());
+            });
+            $("#show3").click(function () {
+                alert($("#test2").val());
+            });
+        });
+        * */
+        $(document).ready(function () {
+            $("#show").click(function () {
+             $("#test").text("hhhhhhh");
+            });
+            $("#show2").click(function () {
+                $("#test1").html("<b>hhhhhhh</b>>");
+            });
+            $("#show3").click(function () {
+                $("#test2").val("hhhhhh");
+            });
+            <!--append追加-->
+            $("#show4").click(function () {
+                $("#test").append("hehehe");
+            });
+        });
+
+    </script>
+</head>
+<body>
+<p id="test">这是段落中的<b>粗体</b>文本</p>
+<p id="test1" 这是段落中的></p>
+<br>
+<input id="show" type="button" value="显示文本">
+<input id="show2" type="button" value="显示html">
+<br>
+<input id="test2" type="text">
+<input id="show3" type="button" value="显示值">
+<input id="show4" type="button" value="追加">
+</body>
+</html>

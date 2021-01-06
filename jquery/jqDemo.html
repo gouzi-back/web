@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript"  src="js/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("input").click(function () {
+                $(this).hide();
+            });
+        });
+        $(document).ready(function () {
+            $("input").click(function () {
+                $("#test").hide();
+            });
+        });
+        $(document).ready(function () {
+            $("input").click(function () {
+                $("").hide();
+            });
+        });
+        $(document).ready(function () {
+            $("input").click(function () {
+                $(".test").hide();
+                $("p").css("background","red");
+            });
+        });
+       
+
+    </script>
+</head>
+<body>
+<!-- 演示 jQuery hide() 函数，隐藏当前的 HTML 元素。-->
+<input type="button" value="点击隐藏">
+<!-- 演示 jQuery hide() 函数，隐藏 id="test" 的元素。-->
+<p id="test">哈哈哈哈哈哈</p>
+<p>哈哈哈哈哈哈</p>
+<input type="button" value="点击隐藏">
+<!-- 演示 jQuery hide() 函数，隐藏所有 <p> 元素。-->
+<h1>hahhahahaah11</h1>
+<p >哈哈哈哈哈哈</p>
+<p>哈哈哈哈哈哈</p>
+<input type="button" value="点击隐藏">
+<!-- 演示 jQuery hide() 函数，隐藏所有 class="test" 的元素。-->
+<h1 class="test">hahhahahaah</h1>
+<p  class="test">哈哈哈哈哈哈</p>
+<p>哈哈哈哈哈哈</p>
+<input type="button" value="点击隐藏">
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+    <script>
+        function f() {
+                var x=document.forms["one"]["two"].value;
+                var b=document.forms["one"]["three"].value;
+                if (x==""){
+                    alert("用户名不能为空")
+                    return false;
+                }
+                if (b==""){
+                    alert("密码不能为空")
+                    return false;
+                }
+                if (b=="123456"){
+                    return true;
+                }else {
+                    alert("密码错误")
+                    return false;
+                }
+        }
+
+    </script>
+    <style>
+        div{border: 0px solid #FF0000;}
+    </style>
+</head>
+<body>
+<div>
+    <img src="images\163logo.gif" >
+    <div style="float: right;text-align: center;margin-top: 20px;margin-right: 50px">
+        <a>免费邮</a> <a>企业邮</a> <a>VIP邮</a><a href="">帮助</a>
+    </div>
+
+
+
+
+</div>
+<div style="height: 780px;margin-top: 10px;margin-bottom: 10px">
+    <div style="float: left;height: 780px;width: 1000px;align-content: center"> <img src="images\imap.jpg"><br>
+        <ul>
+            <li>163/126/yeah三大免费邮箱均默认开放</li>
+            <li>全面支持iPhone/iPad及Android等系统</li>
+            <li>客户端、手机与网页，实现发送、阅读邮件立即同步普通登录手机号登录</li>
+        </ul>
+
+    </div>
+    <div style="float: right;height: 780px;width: 850px;line-height: 50px">
+    <form action="three-2.html" method="post" name="one" onsubmit="return f()">
+       <dl>
+           <dt><img src="images\loginIcon.gif">普通登录</dt>
+           <dd>  用户名：<input type="text" name="two" required>@163.com</dd>
+           <dd> 密  码 ：&nbsp;&nbsp;<input type="password" size="20px" name="three" required></dd>
+           <dd> 版本：<select name="first">
+               <option selected>默认</option>
+               <option>1.0</option>
+               <option >2.0</option>
+           </select></dd>
+           <dd>   <input type="radio">自动登录 <input type="radio" checked>ssl</dd>
+           <dd> <input type="submit"><a href="three-3.html"><input type="button" value="注册"></a></dd>
+       </dl>
+
+    </form>
+    </div>
+</div>
+<div style="position: absolute"><img src="images\netease_logo.gif"> 关于网易 免费邮 官方博客 客户服务 隐私政策 | 网易公司版权所有 ? 1997-2011 </div>
+
+</body>
+</html>

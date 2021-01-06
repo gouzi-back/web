@@ -1,0 +1,16 @@
+
+p:nth-child(even){background-color: #FF0000;}
+p:nth-child(odd){background-color: blue;}
+ul{list-style-type: none;}
+li{line-height: 50px}
+li:nth-child(3){color: darkgrey}
+li:nth-child(5){color: red}
+li:nth-child(7){color: blue}
+.clear:after{
+    content: "";
+    display: none;
+    clear: both;
+}
+ul{float: left}
+
+div{border-style: none;overflow: auto}

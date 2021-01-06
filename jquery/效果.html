@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/demo.css">
+    <script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#input1").click(function () {
+                $("img").hide(1000);
+            });
+            $("#input2").click(function () {
+                $("img").show(1000);
+            });
+        });
+    <!--toggle()方法来切换 hide() 和 show() 方法-->
+        $(document).ready(function () {
+            $("#input3").click(function () {
+                $("img").toggle(1000);
+            });
+        });
+    /*通过 jQuery，您可以实现元素的淡入淡出效果。
+
+     jQuery 拥有下面四种 fade 方法：
+
+     fadeIn()
+     fadeOut()
+     fadeToggle()
+     fadeTo()*/
+        <!--演示带有不同参数的 fadeIn() 方法。 方法-->
+        $(document).ready(function () {
+            $("#input4").click(function () {
+                $("#div1").fadeIn();
+                $("#div2").fadeIn(1000);
+                $("#div3").fadeIn(3000);
+            });
+        });
+        <!--演示带有不同参数的 fadeOut() 方法。 方法-->
+        $(document).ready(function () {
+            $("#input5").click(function () {
+                $("#div1").fadeOut();
+                $("#div2").fadeOut(1000);
+                $("#div3").fadeOut(3000);
+            });
+        });
+        <!--演示带有不同参数的 fadeToggle() 方法。 方法-->
+        $(document).ready(function () {
+            $("#input7").click(function () {
+                $("#div1").fadeToggle("slow");
+                $("#div2").fadeToggle("slow");
+                $("#div3").fadeToggle("slow");
+            });
+        });
+        <!--演示带有不同参数的 fadeTo() 方法。 方法-->
+        $(document).ready(function () {
+            $("#input6").click(function () {
+                $("#div1").fadeTo("slow",0.1);
+                $("#div2").fadeTo("slow",0.5);
+                $("#div3").fadeTo("slow",0.9);
+            });
+        });
+        /* jQuery 拥有以下滑动方法：
+            slideDown()
+            slideUp()
+            slideToggle()*/
+
+        $(document).ready(function () {
+            <!--slideDown() 方法用于向下滑动元素。-->
+            $("#input8").click(function () {
+                $("#divSlideDown").slideDown("slow");
+
+            });
+            <!--slideUp() 方法用于向下滑动元素。-->
+            $("#input9").click(function () {
+                $("#divSlideDown").slideUp("slow");
+            });
+            <!--slideToggle() 方法用于向下滑动元素。-->
+            $("#input10").click(function () {
+                $("#divSlideDown").slideToggle(5000);
+            });
+        });
+        /* animate() 方法允许您创建自定义的动画。*/
+        $(document).ready(function () {
+            $("#input11").click(function () {
+                var div=$("#divA");
+                /*
+                div.animate({height:'300px',opacity:'0.4'},"slow");
+                div.animate({width:'300px',opacity:'0.8'},"slow");
+                div.animate({height:'100px',opacity:'0.4'},"slow");
+                div.animate({width:'100px',opacity:'0.8'},"slow");*/
+                div.animate({left:'200px'},"slow");
+                div.animate({width:'300px',height:'300px',opacity:'0.8',fontSize:'100px'},1000);
+
+            });
+        });
+        /*stop() 方法用于在动画或效果完成前对它们进行停止。
+        */
+        $(document).ready(function () {
+               $("#input12").click(function () {
+                   $("#divSlideDown").stop();
+               });
+        });
+    </script>
+</head>
+<body>
+<img   src="images/img1.png">
+<br>
+<input id="input1"  type="button"value="hide">
+<input id="input2" type="button"value="show">
+<input id="input3" type="button" value="toggle" style="background: red">
+<br>
+<input id="input4" type="button" value="fadeIn">
+<input id="input5" type="button" value="fadeOut">
+<input id="input7" type="button" value="fadeToggle"style="background: red">
+<br>
+<input id="input6" type="button" value="fadeTo">
+<input id="input8" type="button" value="slideDown">
+<input id="input9" type="button" value="slideUp">
+<input id="input10" type="button" value="slideToggle" style="background: red">
+<br>
+<input id="input11" type="button" value="animate">
+<br>
+<input id="input12" type="button" value="slideUp">
+<div id="div1" class="a"></div>
+<div id="div2" class="b"></div>
+<div id="div3" class="c"></div>
+<div id="divSlideDown" class="d"></div>
+<div id="divA" class="e">
+    hello
+</div>
+</body>
+</html>
