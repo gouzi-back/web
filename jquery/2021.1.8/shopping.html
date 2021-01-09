@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>完善当当购物车页面</title>
+    <link type="text/css" rel="stylesheet" href="css/cartStyle.css" />
+    <script>
+
+        function sum(index) {
+                var sun="";
+                var fmoney=parseFloat(document.getElementsByName("price")[index].value);//21.9
+                var jia=parseFloat(document.getElementsByName("amount")[index].value)+1;
+                document.getElementsByName("amount")[index].value=jia;
+                var sun=fmoney*jia;
+
+                var pppp="price"+index;
+                document.getElementById(pppp).value=sun.toFixed(2);
+                //alert(  document.getElementById(pppp).value=sun.toFixed(2));
+                document.getElementById(pppp).innerText="￥"+sun.toFixed(2);
+
+
+
+        }
+        function jian(index) {
+            var un=0;
+
+            var fmoney=parseFloat(document.getElementsByName("price")[index].value);//21.9
+            var jian=parseFloat(document.getElementsByName("amount")[index].value)-1;
+            document.getElementsByName("amount")[index].value=jian;
+            un=fmoney*jian;
+
+            if (document.getElementsByName("amount")[index].value<=0){
+                document.getElementsByName("amount")[index].value=0;
+                un=0;
+            }
+            var pppp="price"+index;
+            document.getElementById(pppp).value=un.toFixed(2);
+            document.getElementById(pppp).innerText="￥"+un.toFixed(2);
+
+
+        }
+        function jieSuan() {
+
+              //var one =parseFloat(document.getElementById("price0").value);
+              //var two =parseFloat(document.getElementById("price1").value);
+             // alert(one.toFixed(2));
+             // alert(two.toFixed(2));
+
+
+
+                //alert( document.getElementById("price0").value);
+                //alert(document.getElementById("price1").value);
+            document.getElementById("totalPrice").innerText=document.getElementById("price0").value+document.getElementById("price1").value;
+        }
+    </script>
+</head>
+<body>
+
+<div class="content">
+    <div class="logo">
+        <img src="img/dd_logo.jpg"><span>关闭</span>
+    </div>
+    <div class="cartList">
+        <ul>
+            <li>¥<input type="text"   name="price" value="21.90"></li>
+            <li><input type="button" name="minus" value="-" onclick="jian(0)"><input type="text" name="amount" value="0"><input type="button" name="plus" value="+" onclick="sum(0)"></li>
+            <li id="price0" value="0.00">¥0.00</li>
+            <li><p>移入收藏</p><p>删除</p></li>
+        </ul>
+        <ul>
+            <li>¥<input type="text" name="price" value="24.00"></li>
+            <li><input type="button" name="minus" value="-" onclick="jian(1)"><input type="text" name="amount" value="0"><input type="button" name="plus" value="+" onclick="sum(1)"></li>
+            <li id="price1"value="0.00">¥0.00</li>
+            <li><p>移入收藏</p><p>删除</p></li>
+        </ul>
+        <ol>
+            <li id="totalPrice">&nbsp;</li>
+            <li><span onclick="jieSuan()">结 算</span></li>
+        </ol>
+    </div>
+</div>
+</body>
+</html>

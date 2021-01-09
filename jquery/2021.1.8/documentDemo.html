@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>documentDemo</title>
+
+    <script>
+        function shijian() {
+
+            var ti =new Date();
+            var nian =ti.getFullYear()
+            var yue =ti.getMonth()+1;
+            var ri=ti.getDate();//月份中的莫一天
+            var shi=ti.getHours();
+            var fen=ti.getMinutes();
+            var miao=ti.getSeconds();
+            var sj=nian+":"+yue+":"+ri+":"+shi+":"+fen+":"+miao;
+            document.getElementById("shi").innerText=sj;
+        }
+        var shiJ;
+        function timer() {
+            shiJ=setInterval("shijian()",1000);
+        }
+
+        function clear() {
+
+            clearInterval(shiJ);
+        }
+    </script>
+</head>
+<body>
+<div >
+    <h1 id="shi" onclick="timer()">shijian</h1>
+    <h1 onclick="clear()">清楚周期性函数</h1>
+</div>
+</body>
+</html>
