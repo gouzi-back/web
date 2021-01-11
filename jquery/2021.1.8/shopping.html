@@ -35,6 +35,7 @@
             }
             var pppp="price"+index;
             document.getElementById(pppp).value=un.toFixed(2);
+            //alert(un.toFixed(2));
             document.getElementById(pppp).innerText="￥"+un.toFixed(2);
 
 
@@ -48,9 +49,11 @@
 
 
 
-                //alert( document.getElementById("price0").value);
-                //alert(document.getElementById("price1").value);
-            document.getElementById("totalPrice").innerText=document.getElementById("price0").value+document.getElementById("price1").value;
+
+            var p1=parseFloat(document.getElementById("price0").innerHTML.substring(1)).toFixed(2);
+            var p2=parseFloat(document.getElementById("price1").innerHTML.substring(1)).toFixed(2);
+            var c=parseFloat(p1)+parseFloat(p2);
+            document.getElementById("totalPrice").innerText=c.toFixed(2);
         }
     </script>
 </head>
@@ -70,7 +73,7 @@
         <ul>
             <li>¥<input type="text" name="price" value="24.00"></li>
             <li><input type="button" name="minus" value="-" onclick="jian(1)"><input type="text" name="amount" value="0"><input type="button" name="plus" value="+" onclick="sum(1)"></li>
-            <li id="price1"value="0.00">¥0.00</li>
+            <li id="price1" value="0.00">¥0.00</li>
             <li><p>移入收藏</p><p>删除</p></li>
         </ul>
         <ol>
