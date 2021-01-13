@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> 广告图片轮播切换</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="jquery/jquery-3.5.1.js"></script>
+    <script>
+        $(function () {
+            //记录当前的位置
+            var index=0;
+            var num=0;
+            //显示两侧边框
+         $(".adver").hover(function () {
+             $(".arrowRight ,.arrowLeft").toggle();
+         });
+            //实现左边的效果
+         $(".arrowLeft").click(function () {
+             index--;
+             if (index<0){
+                 index=5;
+             }
+            $(".adver").css("background","url(images/adver0"+(index+1)+".jpg)");
+            $(" li:nth-of-type("+(index+1)+")").css("background","orange").siblings().css("background","black") ;
+         })
+            //实现右边的效果
+            $(".arrowRight").click(function () {
+                index++;
+                if (index>5){
+                    index=0;
+                }
+                 num=index+1;
+                $(".adver").css("background","url(images/adver0"+(index+1)+".jpg)");
+                $("li:nth-of-type("+num+")").css("background","orange").siblings().css("background","black");
+            })
+
+            //点击喜欢
+            $("li").hover(function () {
+                index=$(this).index();
+                num=index+1;
+                $(".adver").css("background","url(images/adver0"+(index+1)+".jpg)");
+                $("li:nth-of-type("+num+")").css("background","orange").siblings().css("background","black");
+            })
+            //定时器切换
+            var runID="";
+         //创建方法
+            function run() {
+                runID=setInterval(function () {
+                    index++;
+                    if (index>5){
+                        index=0;
+                    }
+                    num=index+1;
+                    $(".adver").css("background","url(images/adver0"+(index+1)+".jpg)");
+                    $("li:nth-of-type("+num+")").css("background","orange").siblings().css("background","black");
+                },2000);
+            }
+            //触发方法
+            run();
+            //移入暂停和移出恢复定时滚动
+            $(".adver").mousemove(function () {
+              clearInterval(runID);
+            }).mouseout(function () {
+                run();
+            })
+
+        })
+
+
+    </script>
+</head>
+<body>
+<div class="adver">
+    <ul>
+        <li>1</li>
+        <li id="two">2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <div class="arrowLeft"><</div><div class="arrowRight">></div>
+</div>
+
+</body>
+
+</html>

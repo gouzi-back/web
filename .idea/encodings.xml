@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/2021.1.13/练习3：使用jQuery变换网页效果/你是人间四月天.txt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jquery/2020.1.11/练习3：制作课工场论坛发贴/css/bbs.css" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
